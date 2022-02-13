@@ -1,0 +1,14 @@
+
+.vscode/
+
+.vscode/*
+
+target/
+
+target/*
+
+*.class
+
+classes/
+
+*.jar
