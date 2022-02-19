@@ -1,20 +1,14 @@
 package app.desktop.config;
 
 import java.io.File;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Objects;
-import java.util.logging.Logger;
 
 public class ConfigProvider {
 
     private ConfigProvider() {
-        try {
-            trayIcon = new URL("https://github.com/sharief007/text-shot/blob/master/src/main/resources/icon.png?raw=true");
-        } catch (MalformedURLException e) {
-            logger.severe("Tray Icon not found");
-            logger.severe(e.getMessage());
-        }
+        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+        trayIcon = classloader.getResource("icon.png");
     }
 
     private static ConfigProvider provider = null;
@@ -23,7 +17,6 @@ public class ConfigProvider {
     private final String dataPath =  homePath + File.separator + "tessdata";
     private final String trainedDataURL = "https://github.com/tesseract-ocr/tessdata/blob/main/eng.traineddata?raw=true";
     private final int fontSize = 14;
-    private final Logger logger = Logger.getAnonymousLogger();
     private URL trayIcon = null;
 
     public static ConfigProvider getInstance() {
