@@ -5,6 +5,10 @@
 
 TextShot is a tiny tool to extract text content from Image files. This tool internally uses Tessaract API for extraction.
 
+### Demo
+
+![Demo GIF](./screen-capture.gif)
+
 ### Prerequisite
 
 - Java 11 or higher is required. 
@@ -24,9 +28,6 @@ You can also extract text content from a image file by selecting "choose file"
 
 - Download the fat jar file with dependencies in target folder.
 
-### Demo
-
-![Demo GIF](./screen-capture.gif)
 
 ### Todo
 1. ~~Support for Image Files~~
